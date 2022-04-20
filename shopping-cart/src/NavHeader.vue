@@ -1,15 +1,18 @@
 <template>
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark" role="navigation">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
   <div class="container">
-    <router-link to="/" class="navbar-brand mr-auto">Feel Mood Box</router-link>
+    <a class="navbar brand" href="/"><img class="w-25" src="https://i.pinimg.com/originals/10/56/1d/10561d687459407da350a04da728034b.jpg"></a>
 
-      <ul class="navbar-nav mr-auto">
-        <li><a href="/shop">Shop</a></li>
-      </ul>
 
       <ul class="nav navbar-nav">
+        <li>
+        <a class="navbar brand text-light" href="/shop">Shop</a>
+        </li>
+        <li>
+          <ShoppingCart />
+        </li>
         <router-link to="/" tag="li" v-if="!isAuthenticated" class="nav-item" active-class="active">
-          <a @click="onLoginClicked" class="nav-link">Login</a>
+          <a @click="onLoginClicked" class="nav-link pl-3">Login</a>
         </router-link>
         <li v-if="isAuthenticated" class="li-pointer nav-item">
           <div class="dropdown">
@@ -21,9 +24,6 @@
               <a @click="onLogoutClicked" class="dropdown-item">Logout {{ userEmail }}</a>
             </div>
           </div>
-        </li>
-        <li>
-          <ShoppingCart />
         </li>
       </ul>
   </div>
