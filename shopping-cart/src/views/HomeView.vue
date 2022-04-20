@@ -1,27 +1,11 @@
 <template>
   <div class="container">
-    <div class="container">
-      <div class="row">
-        <Item v-for="product in products" 
-        :key="product.id"
-        :item="product"/>
-      </div>
-    </div>  
+    <h1>Feel good box</h1>
   </div>
 </template>
-	
 <script>
-// @ is an alias to /src
-import Item from "@/Item.vue"  
+import NavHeader from "@/NavHeader";
 export default {
-  name: 'Home',
-  computed: {
-    products() {
-      return this.$store.state.products;
-    }
-  },
-  components: {
-    Item
-  }
+  components: {NavHeader}
 }
 </script>

@@ -2,8 +2,11 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark" role="navigation">
   <div class="container">
     <router-link to="/" class="navbar-brand mr-auto">Feel Mood Box</router-link>
+
       <ul class="navbar-nav mr-auto">
+        <li><a href="/shop">Shop</a></li>
       </ul>
+
       <ul class="nav navbar-nav">
         <router-link to="/" tag="li" v-if="!isAuthenticated" class="nav-item" active-class="active">
           <a @click="onLoginClicked" class="nav-link">Login</a>
