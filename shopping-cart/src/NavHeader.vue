@@ -13,7 +13,7 @@
         <li>
         <a class="navbar brand text-light " href="/shop">Shop</a>
         </li>
-          <div class="d-flex" style="margin-left: 500px">
+          <div class="d-flex" style="margin-left: 450px">
         <li>
           <ShoppingCart/>
         </li>
