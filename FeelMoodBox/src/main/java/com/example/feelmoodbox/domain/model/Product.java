@@ -1,13 +1,11 @@
 package com.example.feelmoodbox.domain.model;
 
-import org.intellij.lang.annotations.Pattern;
-
 import javax.persistence.*;
 //import javax.validation.constraints.*;
 
 
 @Entity
-@Table(name = "product")
+@Table(name = "products")
 public class Product {
 
     @Id
@@ -16,26 +14,25 @@ public class Product {
 
     //@Column(unique=true)
     //@NotBlank(message = "title.missing")
-    private String title;
 
-
+    private String name;
     private String description;
-    private String thumbnail_url;
-    private int quantity;
-    private float price;
+    private int amount;
+    private double price;
+    private String thumbnail;
 
     public Product() {
 
     }
 
-    public Product(String id, String title, String description, String thumbnail_url, int quantity, float price) {
+    public Product(String id, String name, String description, int amount, double price,String thumbnail) {
         super();
         this.id = id;
-        this.title = title;
+        this.name = name;
         this.description = description;
-        this.thumbnail_url = thumbnail_url;
-        this.quantity = quantity;
+        this.amount = amount;
         this.price = price;
+        this.thumbnail = thumbnail;
     }
 
     public String getId() {
@@ -46,12 +43,12 @@ public class Product {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String title) {
+        this.name = title;
     }
 
     public String getDescription() {
@@ -62,27 +59,27 @@ public class Product {
         this.description = description;
     }
 
-    public String getThumbnail_url() {
-        return thumbnail_url;
+    public String getThumbnail() {
+        return thumbnail;
     }
 
-    public void setThumbnail_url(String thumbnail_url) {
-        this.thumbnail_url = thumbnail_url;
+    public void setThumbnail(String thumbnail) {
+        this.thumbnail = thumbnail;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public int getAmount() {
+        return amount;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
-    public float getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
