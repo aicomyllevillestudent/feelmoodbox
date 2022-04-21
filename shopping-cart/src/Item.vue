@@ -1,17 +1,17 @@
 <template>
 <div class="col-sm-4 item">
   <div class="card text-center" >
-    <div>
+    <div class="h-75">
       <img :src="item.thumbnail_url" alt="" class="card-img-top grow">
     </div>
     <div class="card-body">
       <h5 class="card-title">{{ item.title }}</h5>
       <h6 class="card-subtitle mb-2 remain">{{ item.quantity }} left in stock</h6>
       <p class="card-text">{{ item.description | shortDescription }}</p>
-      <div class="row">
-        <p class="col-6 lead">${{ item.price }}</p>
-        <p class="col-6">
-          <button class="btn btn-success" :disabled="item.quantity === 0" @click="addToCart(item)">
+      <div class="card-footer row">
+        <p class="col-sm lead">${{ item.price }}</p>
+        <p class="col-sm">
+          <button class="btn btn-success mb-0" :disabled="item.quantity === 0" @click="addToCart(item)">
             Add to cart
           </button>
         </p>
@@ -33,8 +33,8 @@ export default {
     },
     filters: {
         shortDescription(value) {
-        if (value && value.length > 70) {
-            return value.substring(0, 70) + '...';
+        if (value && value.length > 120) {
+            return value.substring(0, 120) + '...';
         } else {
             return value;
         }
