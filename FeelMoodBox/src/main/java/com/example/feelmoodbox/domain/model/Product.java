@@ -1,10 +1,24 @@
-package com.example.feelmoodbox;
+package com.example.feelmoodbox.domain.model;
+
+import org.intellij.lang.annotations.Pattern;
+
+import javax.persistence.*;
+//import javax.validation.constraints.*;
 
 
+@Entity
+@Table(name = "product")
 public class Product {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
+
+    //@Column(unique=true)
+    //@NotBlank(message = "title.missing")
     private String title;
+
+
     private String description;
     private String thumbnail_url;
     private int quantity;
